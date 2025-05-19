@@ -1,86 +1,27 @@
+# Neon Bootcamp Week1
+
+## Beginner task
+
+- I created YUKI token.
+  [code](https://github.com/yukikm/neon-erc20forspl-token/blob/05d4d7ca0b67604ca7f041a519be2e600f8d6f4e/scripts/TestCallSolana/TestDevBootcamp.js#L34-L40)
+
 ```
-% npx hardhat run scripts/TestCallSolana/TestDevBootcamp.js --network neondevnet
-0xf7b4F414d1CDa6d8feCD0403E52C4dFC8fB70E2E ERC20ForSPLMintableAddress
-0xf1d8f76a21f376e5718486eca178f6a6cd951c31f2930538dd75e11eabf8b008 tokenMint
-TestDevBootcamp deployed to 0x59D820862385b34eF29AB0fba5dB93E0929a72b3
-HVRMkNzZWja9A8DfS9Xx5mrRpNpdBrjDEHCdtJryXb3c contractPublicKey
-PublicKey [PublicKey(FQpYz63xFHKiJ58xUQsW865fYUa7i4w9Q8S1BLqvWz8B)] {
-  _bn: <BN: d61dbdff4ae6932601f2320117a29f37e74f9c45a4a036b852bce79901fe253c>
-} senderATA
-PublicKey [PublicKey(GD8Dd62zEVTweRiXGTc1JmPC6c8dMA8EVSPWj1dPB9Kz)] {
-  _bn: <BN: e1fa6f41c8ea89566733406f4bf26584c211c92c0eb1cc5f92bd5a220c8a22dd>
-} recipientATA
-66znHW41gFsD4AJ4aEjD4ohpdq63o9KEnq4n3SK6GYGxfjsgrh1UwvLPibpss34dE3WqcP4FQk3nrK6bRSuwhn2W transaction sender & recipient ATA's creation
-ContractTransactionResponse {
-  provider: HardhatEthersProvider {
-    _hardhatProvider: LazyInitializationProviderAdapter {
-      _providerFactory: [AsyncFunction (anonymous)],
-      _emitter: [EventEmitter],
-      _initializingPromise: [Promise],
-      provider: [BackwardsCompatibilityProviderAdapter]
-    },
-    _networkName: 'neondevnet',
-    _blockListeners: [],
-    _transactionHashListeners: Map(0) {},
-    _eventListeners: [],
-    _isHardhatNetworkCached: false,
-    _transactionHashPollingTimeout: undefined
-  },
-  blockNumber: null,
-  blockHash: null,
-  index: undefined,
-  hash: '0x04d353956f5fba8186b1e54fed75166cad284632c625bb25989fab3f6cb9ce8b',
-  type: 2,
-  to: '0xf7b4F414d1CDa6d8feCD0403E52C4dFC8fB70E2E',
-  from: '0xEE8b59794Ee3A6aeeCE9aa09a118bB6ba1029e3c',
-  nonce: 3,
-  gasLimit: 1243135n,
-  gasPrice: 2416245697077n,
-  maxPriorityFeePerGas: 1909132402628n,
-  maxFeePerGas: 2416245697077n,
-  maxFeePerBlobGas: null,
-  data: '0x095ea7b300000000000000000000000059d820862385b34ef29ab0fba5db93e0929a72b300000000000000000000000000000000000000000000000000000002540be400',
-  value: 0n,
-  chainId: 245022926n,
-  signature: Signature { r: "0x14753f2cb03afa32b77687fd560be694f532ce59bf839e930de7eb430eae9635", s: "0x3350db23cfec0406ef76223651b5c242764a648fc563629333034bd18e1bd881", yParity: 0, networkV: null },
-  accessList: null,
-  blobVersionedHashes: null,
-  authorizationList: null
-} erc20forspl approve
-ContractTransactionResponse {
-  provider: HardhatEthersProvider {
-    _hardhatProvider: LazyInitializationProviderAdapter {
-      _providerFactory: [AsyncFunction (anonymous)],
-      _emitter: [EventEmitter],
-      _initializingPromise: [Promise],
-      provider: [BackwardsCompatibilityProviderAdapter]
-    },
-    _networkName: 'neondevnet',
-    _blockListeners: [],
-    _transactionHashListeners: Map(0) {},
-    _eventListeners: [],
-    _isHardhatNetworkCached: false,
-    _transactionHashPollingTimeout: undefined
-  },
-  blockNumber: null,
-  blockHash: null,
-  index: undefined,
-  hash: '0xfc0257431008a10c64d5cf095c3ed7ae1d035920073973c47cd631a114f6e62a',
-  type: 2,
-  to: '0x59D820862385b34eF29AB0fba5dB93E0929a72b3',
-  from: '0xEE8b59794Ee3A6aeeCE9aa09a118bB6ba1029e3c',
-  nonce: 4,
-  gasLimit: 2199551n,
-  gasPrice: 2248001066926n,
-  maxPriorityFeePerGas: 1776198373867n,
-  maxFeePerGas: 2248001066926n,
-  maxFeePerBlobGas: null,
-  data: '0x74ee1fb500000000000000000000000000000000000000000000000000000002540be4009a981c37d1a476b097dd3004bc0bc92239318a3380fb5bb1b3f32563fa1febb3',
-  value: 0n,
-  chainId: 245022926n,
-  signature: Signature { r: "0x598001fc4aef737610a39bf64582f01a3693ea0064c0ff56e9b20f701f10b2a4", s: "0x5b6224d5f2984cdf8ab20edf2b17acb0c9b91ab3f94f798be6735fc73bc7e92b", yParity: 0, networkV: null },
-  accessList: null,
-  blobVersionedHashes: null,
-  authorizationList: null
-} TestDevBootcamp transfer
+// Deploy ERC20ForSplMintable contract
+  tx = await ERC20ForSplFactory.createErc20ForSplMintable(
+    "0xyuki token " + Date.now().toString(),
+    "YUKI",
+    9,
+    user1.address
+  );
+  await tx.wait(1);
 ```
+
+- [Token address(Neon Devnet Explorer)](https://neon-devnet.blockscout.com/address/0x9B3E78036871D1359F48bAa5Bbe15Bc933f95f97)
+- [Token address(SOLSCAN Devnet Explorer)](https://solscan.io/token/64VW1YpT24KmRke5c9nnRGMyRqpf9ECUsoK1nJu5QZuo?cluster=devnet#metadata)
+
+## Intermediate task
+
+- I try to token transfer
+- [Deployed contract(Neon Devnet Explorer)](https://neon-devnet.blockscout.com/address/0x70B3dDE39013cB8A54fcAE026e043aCcdb334F41)
+- [Transfer transaction(Neon Devnet Explorer)](https://neon-devnet.blockscout.com/tx/0x787b686d05995d8695d068af6cc96efc2db12089d421c04734a9f1cf5308eeb2)
+- [Transfer transaction(SOLSCAN Devnet Explorer)](https://solscan.io/tx/xqyt6UsBTnrcHmV2Yt8jeC3tticeaEFu7LSMN6Ber7YD8qsNrxU1G7EZspuvZgd7mTWPpKKEP89s2NfPuV8JAhb?cluster=devnet)
