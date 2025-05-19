@@ -21,7 +21,7 @@
 
 ## Intermediate task
 
-- I try to token transfer
+- I try to transfer token by using ICallSolana
 - [Deployed contract(Neon Devnet Explorer)](https://neon-devnet.blockscout.com/address/0x70B3dDE39013cB8A54fcAE026e043aCcdb334F41)
 - [Transfer transaction(Neon Devnet Explorer)](https://neon-devnet.blockscout.com/tx/0x787b686d05995d8695d068af6cc96efc2db12089d421c04734a9f1cf5308eeb2)
 - [Transfer transaction(SOLSCAN Devnet Explorer)](https://solscan.io/tx/xqyt6UsBTnrcHmV2Yt8jeC3tticeaEFu7LSMN6Ber7YD8qsNrxU1G7EZspuvZgd7mTWPpKKEP89s2NfPuV8JAhb?cluster=devnet)
